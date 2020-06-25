@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Query</title>
+	<script src="jquery-3.5.1.min.js"></script>
+	<script>
+		$(document).ready(function()
+		{
+
+			$('#keBandung').on('click', function(){
+				alert('Saya mau ke Bandung');
+			});
+
+			$('#hapusBandung').on('click', function(){
+				$('.bandung').remove();
+				alert('Bandung dihapus');
+			});
+
+			$('#hideBandung').on('click', function(){
+				//$('.bandung').hide();
+				//$('.bandung').fadeOut(2000);
+				$('.bandung').slideUp(2000);
+			});
+
+			$('#toggleButton').on('click', function(){
+				$('.bandung').toggle();
+			});
+
+			$('#toggleButton').on('click', function(){
+				//$('.bandung').slideToggle();
+				$('.bandung').animate({
+					marginLeft:100
+				});
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<h1>Kemana anda ingin pergi?</h1>
+	<ul class="lokasi">
+		<li class="bandung">
+		Bandung
+		<button id="keBandung">Pergi</button>
+		<button id="hapusBandung">X</button>
+		<button id="hideBandung">H</button>
+		</li>
+		<li class="jakarta">Jakarta</li>
+		<li class="surabaya">Surabaya</li>
+	</ul>
+	<button id="toggleButton">Toggle Bandung</button>
+</body>
+</html>
